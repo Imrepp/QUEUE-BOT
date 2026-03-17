@@ -366,7 +366,8 @@ class App(tk.Tk):
 
         self._build_ui()
         self._center(820, 680)
-        self.bind("<Unmap>", self._on_minimize)
+        # System tray: install pystray and uncomment to enable
+        # self.bind("<Unmap>", self._on_minimize)
         self.after(300, self._launch_bot)
 
     # ── UI ─────────────────────────────────────────────────────────────
@@ -1225,11 +1226,16 @@ class App(tk.Tk):
             pass  # pystray not installed — skip tray
 
     def _on_minimize(self, event):
-        """Hide to tray when minimized."""
-        if self.state() == "iconic":
+        """Hide to tray when minimized — only if pystray is available."""
+        if self.state() != "iconic":
+            return
+        try:
+            import pystray
             self.withdraw()
             if not hasattr(self, "_tray_icon") or self._tray_icon is None:
                 self._setup_tray()
+        except ImportError:
+            pass  # pystray not installed — just minimize normally
 
     # ── Token change popup ─────────────────────────────────────────────
 
