@@ -1,0 +1,594 @@
+{
+    "token": "YOUR_DISCORD_TOKEN_HERE",
+    "leave_threshold": 10,
+    "click_delay": 0.5,
+    "servers": [
+        {
+            "name": "Sword",
+            "group": "pvptiers",
+            "queue_bot_id": 1328378417145446440,
+            "guild_id": 513709294844117013,
+            "queue_channel_id": 984399122775814154,
+            "commands_channel_id": 721746883608969216,
+            "auto_join": false,
+            "queue_open_keywords": [
+                "Tester(s) Available",
+                "Available!"
+            ],
+            "queue_closed_keywords": [
+                "Not Available",
+                "Closed",
+                "Unavailable"
+            ],
+            "queue_channel_id_eu": 984399122775814154,
+            "queue_channel_id_na": 984398944916365334
+        },
+        {
+            "name": "Axe",
+            "group": "pvptiers",
+            "queue_bot_id": 1328378417145446440,
+            "guild_id": 896903597709754398,
+            "queue_channel_id": 1060545718936404068,
+            "commands_channel_id": 940156911523856394,
+            "auto_join": false,
+            "queue_open_keywords": [
+                "Tester(s) Available",
+                "Available!"
+            ],
+            "queue_closed_keywords": [
+                "Not Available",
+                "Closed",
+                "Unavailable"
+            ],
+            "queue_channel_id_eu": 1060545718936404068,
+            "queue_channel_id_na": 1060543460714741840
+        },
+        {
+            "name": "UHC",
+            "group": "pvptiers",
+            "queue_bot_id": 1328378417145446440,
+            "guild_id": 860880412975824898,
+            "queue_channel_id": 1012662259966808104,
+            "commands_channel_id": 860881608391655424,
+            "auto_join": false,
+            "queue_open_keywords": [
+                "Tester(s) Available",
+                "Available!"
+            ],
+            "queue_closed_keywords": [
+                "Not Available",
+                "Closed",
+                "Unavailable"
+            ],
+            "queue_channel_id_eu": 1012662259966808104,
+            "queue_channel_id_na": 1012662115661774948
+        },
+        {
+            "name": "Netherite Pot",
+            "group": "pvptiers",
+            "queue_bot_id": 1328378417145446440,
+            "guild_id": 875309328607899658,
+            "queue_channel_id": 1005941369862377502,
+            "commands_channel_id": 0,
+            "auto_join": false,
+            "queue_open_keywords": [
+                "Tester(s) Available",
+                "Available!"
+            ],
+            "queue_closed_keywords": [
+                "Not Available",
+                "Closed",
+                "Unavailable"
+            ],
+            "queue_channel_id_eu": 1005941369862377502,
+            "queue_channel_id_na": 1005941299419029655
+        },
+        {
+            "name": "Diamond Pot",
+            "group": "pvptiers",
+            "queue_bot_id": 1328378417145446440,
+            "guild_id": 1007038689412665404,
+            "queue_channel_id": 1129786993962930256,
+            "commands_channel_id": 0,
+            "auto_join": false,
+            "queue_open_keywords": [
+                "Tester(s) Available",
+                "Available!"
+            ],
+            "queue_closed_keywords": [
+                "Not Available",
+                "Closed",
+                "Unavailable"
+            ],
+            "queue_channel_id_eu": 1129786993962930256,
+            "queue_channel_id_na": 1007038692617093264
+        },
+        {
+            "name": "SMP",
+            "group": "pvptiers",
+            "queue_bot_id": 1328378417145446440,
+            "guild_id": 981948043903533176,
+            "queue_channel_id": 1059958041186947072,
+            "commands_channel_id": 0,
+            "auto_join": false,
+            "queue_open_keywords": [
+                "Tester(s) Available",
+                "Available!"
+            ],
+            "queue_closed_keywords": [
+                "Not Available",
+                "Closed",
+                "Unavailable"
+            ],
+            "queue_channel_id_eu": 1059958041186947072,
+            "queue_channel_id_na": 1059958248951779438
+        },
+        {
+            "name": "Crystal",
+            "group": "pvptiers",
+            "queue_bot_id": 1328378417145446440,
+            "guild_id": 1333178700883034269,
+            "queue_channel_id": 1333182357674655774,
+            "commands_channel_id": 0,
+            "auto_join": false,
+            "queue_open_keywords": [
+                "Tester(s) Available",
+                "Available!"
+            ],
+            "queue_closed_keywords": [
+                "Not Available",
+                "Closed",
+                "Unavailable"
+            ],
+            "queue_channel_id_eu": 1333182357674655774,
+            "queue_channel_id_na": 1333182335289524316
+        },
+        {
+            "name": "Diamond Pot",
+            "group": "mctiers",
+            "queue_bot_id": 1308417680361000970,
+            "guild_id": 1317971630886227998,
+            "queue_channel_id": 1317974027922309131,
+            "commands_channel_id": 1317974024936100070,
+            "auto_join": true,
+            "queue_open_keywords": [
+                "Tester(s) Available",
+                "Available!"
+            ],
+            "queue_closed_keywords": [
+                "Not Available",
+                "Closed",
+                "Unavailable"
+            ],
+            "queue_channel_id_eu": 1317974027922309131,
+            "queue_channel_id_na": 1317974027519918148
+        },
+        {
+            "name": "Mace",
+            "group": "pvptiers",
+            "queue_bot_id": 1328378417145446440,
+            "guild_id": 1345939343448997908,
+            "queue_channel_id": 1395704403230720060,
+            "commands_channel_id": 0,
+            "auto_join": false,
+            "queue_open_keywords": [
+                "Tester(s) Available",
+                "Available!"
+            ],
+            "queue_closed_keywords": [
+                "Not Available",
+                "Closed",
+                "Unavailable"
+            ],
+            "queue_channel_id_eu": 1395704403230720060,
+            "queue_channel_id_na": 1395704400361685073
+        },
+        {
+            "name": "Netherite Pot",
+            "group": "mctiers",
+            "queue_bot_id": 1308417680361000970,
+            "guild_id": 987654321098765432,
+            "queue_channel_id": 1317971632484126789,
+            "commands_channel_id": 1317971631490076748,
+            "auto_join": false,
+            "queue_open_keywords": [
+                "Tester(s) Available",
+                "Available!"
+            ],
+            "queue_closed_keywords": [
+                "Not Available",
+                "Closed",
+                "Unavailable"
+            ],
+            "queue_channel_id_eu": 1317971632484126789,
+            "queue_channel_id_na": 1317971632484126787
+        },
+        {
+            "name": "Sword",
+            "group": "mctiers",
+            "queue_bot_id": 1308417680361000970,
+            "guild_id": 1317975081976332338,
+            "queue_channel_id": 1317975085470187621,
+            "commands_channel_id": 1317975082890428530,
+            "auto_join": false,
+            "queue_open_keywords": [
+                "Tester(s) Available",
+                "Available!"
+            ],
+            "queue_closed_keywords": [
+                "Not Available",
+                "Closed",
+                "Unavailable"
+            ],
+            "queue_channel_id_eu": 1317975085470187621,
+            "queue_channel_id_na": 1317975085033717799
+        },
+        {
+            "name": "Axe",
+            "group": "mctiers",
+            "queue_bot_id": 1308417680361000970,
+            "guild_id": 1317974470132240424,
+            "queue_channel_id": 1317974473617707091,
+            "commands_channel_id": 1317974471793184798,
+            "auto_join": false,
+            "queue_open_keywords": [
+                "Tester(s) Available",
+                "Available!"
+            ],
+            "queue_closed_keywords": [
+                "Not Available",
+                "Closed",
+                "Unavailable"
+            ],
+            "queue_channel_id_eu": 1317974473617707091,
+            "queue_channel_id_na": 1317974473617707089
+        },
+        {
+            "name": "UHC",
+            "group": "mctiers",
+            "queue_bot_id": 1308417680361000970,
+            "guild_id": 1316948661384646767,
+            "queue_channel_id": 1316948663095791621,
+            "commands_channel_id": 1316948662043021314,
+            "auto_join": false,
+            "queue_open_keywords": [
+                "Tester(s) Available",
+                "Available!"
+            ],
+            "queue_closed_keywords": [
+                "Not Available",
+                "Closed",
+                "Unavailable"
+            ],
+            "queue_channel_id_eu": 1316948663095791621,
+            "queue_channel_id_na": 1316948663095791619
+        },
+        {
+            "name": "SMP",
+            "group": "mctiers",
+            "queue_bot_id": 1124128173609713734,
+            "guild_id": 1224245679749206050,
+            "queue_channel_id": 1224245683129815060,
+            "commands_channel_id": 1224245680646787147,
+            "auto_join": false,
+            "queue_open_keywords": [
+                "Tester(s) Available",
+                "Available!"
+            ],
+            "queue_closed_keywords": [
+                "Not Available",
+                "Closed",
+                "Unavailable"
+            ],
+            "queue_channel_id_eu": 1224245683129815060,
+            "queue_channel_id_na": 1224245683129815055
+        },
+        {
+            "name": "Mace",
+            "group": "mctiers",
+            "queue_bot_id": 1124128173609713734,
+            "guild_id": 1187058381849112606,
+            "queue_channel_id": 1306852692152422491,
+            "commands_channel_id": 1224397572639293480,
+            "auto_join": false,
+            "queue_open_keywords": [
+                "Tester(s) Available",
+                "Available!"
+            ],
+            "queue_closed_keywords": [
+                "Not Available",
+                "Closed",
+                "Unavailable"
+            ],
+            "queue_channel_id_eu": 1306852692152422491,
+            "queue_channel_id_na": 1306848340813676614
+        },
+        {
+            "name": "Crystal",
+            "group": "mctiers",
+            "queue_bot_id": 1124128173609713734,
+            "guild_id": 898743810207653919,
+            "queue_channel_id": 965410638530744381,
+            "commands_channel_id": 0,
+            "auto_join": false,
+            "queue_open_keywords": [
+                "Tester(s) Available",
+                "Available!"
+            ],
+            "queue_closed_keywords": [
+                "Not Available",
+                "Closed",
+                "Unavailable"
+            ],
+            "queue_channel_id_eu": 965410638530744381,
+            "queue_channel_id_na": 965410572445286462
+        },
+        {
+            "name": "Speed",
+            "group": "subtiers",
+            "queue_bot_id": 1308417680361000970,
+            "guild_id": 1158750236689305670,
+            "queue_channel_id": 1306882989904494663,
+            "commands_channel_id": 1251279352436621354,
+            "auto_join": false,
+            "queue_open_keywords": [
+                "Tester(s) Available",
+                "Available!"
+            ],
+            "queue_closed_keywords": [
+                "Not Available",
+                "Closed",
+                "Unavailable"
+            ],
+            "queue_channel_id_eu": 1306882989904494663,
+            "queue_channel_id_na": 1306882943817482331
+        },
+        {
+            "name": "OGV",
+            "group": "subtiers",
+            "queue_bot_id": 1308417680361000970,
+            "guild_id": 1217042808607608872,
+            "queue_channel_id": 1217898287491715193,
+            "commands_channel_id": 1217754816000950292,
+            "auto_join": false,
+            "queue_open_keywords": [
+                "Tester(s) Available",
+                "Available!"
+            ],
+            "queue_closed_keywords": [
+                "Not Available",
+                "Closed",
+                "Unavailable"
+            ],
+            "queue_channel_id_eu": 1217898287491715193,
+            "queue_channel_id_na": 1217898223491088404
+        },
+        {
+            "name": "Diamond SMP",
+            "group": "subtiers",
+            "queue_bot_id": 1308417680361000970,
+            "guild_id": 1257127206790889552,
+            "queue_channel_id": 1306861081079058502,
+            "commands_channel_id": 1257280576063410196,
+            "auto_join": false,
+            "queue_open_keywords": [
+                "Tester(s) Available",
+                "Available!"
+            ],
+            "queue_closed_keywords": [
+                "Not Available",
+                "Closed",
+                "Unavailable"
+            ],
+            "queue_channel_id_eu": 1306861081079058502,
+            "queue_channel_id_na": 1306860953555701810
+        },
+        {
+            "name": "Cart",
+            "group": "subtiers",
+            "queue_bot_id": 1308417680361000970,
+            "guild_id": 1052301884028883005,
+            "queue_channel_id": 1313223001701093417,
+            "commands_channel_id": 1316123120532455477,
+            "auto_join": false,
+            "queue_open_keywords": [
+                "Tester(s) Available",
+                "Available!"
+            ],
+            "queue_closed_keywords": [
+                "Not Available",
+                "Closed",
+                "Unavailable"
+            ],
+            "queue_channel_id_eu": 1313223001701093417,
+            "queue_channel_id_na": 1313222978439352360
+        },
+        {
+            "name": "Bow",
+            "group": "subtiers",
+            "queue_bot_id": 1308417680361000970,
+            "guild_id": 1046087157447671960,
+            "queue_channel_id": 1313209691253374996,
+            "commands_channel_id": 0,
+            "auto_join": false,
+            "queue_open_keywords": [
+                "Tester(s) Available",
+                "Available!"
+            ],
+            "queue_closed_keywords": [
+                "Not Available",
+                "Closed",
+                "Unavailable"
+            ],
+            "queue_channel_id_eu": 1313209691253374996,
+            "queue_channel_id_na": 1306847339637375049
+        },
+        {
+            "name": "Diamond Crystal",
+            "group": "subtiers",
+            "queue_bot_id": 1308417680361000970,
+            "guild_id": 1130550476379803718,
+            "queue_channel_id": 1329892733678129172,
+            "commands_channel_id": 0,
+            "auto_join": false,
+            "queue_open_keywords": [
+                "Tester(s) Available",
+                "Available!"
+            ],
+            "queue_closed_keywords": [
+                "Not Available",
+                "Closed",
+                "Unavailable"
+            ],
+            "queue_channel_id_eu": 1329892733678129172,
+            "queue_channel_id_na": 1329892720944353329
+        },
+        {
+            "name": "Elytra",
+            "group": "subtiers",
+            "queue_bot_id": 1308417680361000970,
+            "guild_id": 1033857757578801182,
+            "queue_channel_id": 1215727875605663836,
+            "commands_channel_id": 0,
+            "auto_join": false,
+            "queue_open_keywords": [
+                "Tester(s) Available",
+                "Available!"
+            ],
+            "queue_closed_keywords": [
+                "Not Available",
+                "Closed",
+                "Unavailable"
+            ],
+            "queue_channel_id_eu": 1215727875605663836,
+            "queue_channel_id_na": 1215727864750538812
+        },
+        {
+            "name": "Trident",
+            "group": "subtiers",
+            "queue_bot_id": 1308417680361000970,
+            "guild_id": 1157140514420826134,
+            "queue_channel_id": 1346586243185643590,
+            "commands_channel_id": 0,
+            "auto_join": false,
+            "queue_open_keywords": [
+                "Tester(s) Available",
+                "Available!"
+            ],
+            "queue_closed_keywords": [
+                "Not Available",
+                "Closed",
+                "Unavailable"
+            ],
+            "queue_channel_id_eu": 1346586243185643590,
+            "queue_channel_id_na": 1346586097748152370
+        },
+        {
+            "name": "Manhunt",
+            "group": "subtiers",
+            "queue_bot_id": 1308417680361000970,
+            "guild_id": 1166030453011128341,
+            "queue_channel_id": 1306888453895753738,
+            "commands_channel_id": 0,
+            "auto_join": false,
+            "queue_open_keywords": [
+                "Tester(s) Available",
+                "Available!"
+            ],
+            "queue_closed_keywords": [
+                "Not Available",
+                "Closed",
+                "Unavailable"
+            ],
+            "queue_channel_id_eu": 1306888453895753738,
+            "queue_channel_id_na": 1306888402792087583
+        },
+        {
+            "name": "Bed",
+            "group": "subtiers",
+            "queue_bot_id": 1308417680361000970,
+            "guild_id": 1244860811843862639,
+            "queue_channel_id": 1313216656683827221,
+            "commands_channel_id": 0,
+            "auto_join": false,
+            "queue_open_keywords": [
+                "Tester(s) Available",
+                "Available!"
+            ],
+            "queue_closed_keywords": [
+                "Not Available",
+                "Closed",
+                "Unavailable"
+            ],
+            "queue_channel_id_eu": 1313216656683827221,
+            "queue_channel_id_na": 1313216634097500160
+        },
+        {
+            "name": "Creeper",
+            "group": "subtiers",
+            "queue_bot_id": 1308417680361000970,
+            "guild_id": 1232098988925386823,
+            "queue_channel_id": 1306913286503010314,
+            "commands_channel_id": 0,
+            "auto_join": false,
+            "queue_open_keywords": [
+                "Tester(s) Available",
+                "Available!"
+            ],
+            "queue_closed_keywords": [
+                "Not Available",
+                "Closed",
+                "Unavailable"
+            ],
+            "queue_channel_id_eu": 1306913286503010314,
+            "queue_channel_id_na": 1306913240827297894
+        },
+        {
+            "name": "Debuff",
+            "group": "subtiers",
+            "queue_bot_id": 1308417680361000970,
+            "guild_id": 1149904523398225921,
+            "queue_channel_id": 1306874524855435306,
+            "commands_channel_id": 0,
+            "auto_join": false,
+            "queue_open_keywords": [
+                "Tester(s) Available",
+                "Available!"
+            ],
+            "queue_closed_keywords": [
+                "Not Available",
+                "Closed",
+                "Unavailable"
+            ],
+            "queue_channel_id_eu": 1306874524855435306,
+            "queue_channel_id_na": 1306874448837742633
+        },
+        {
+            "name": "Stray",
+            "group": "hungergames",
+            "queue_bot_id": 1472734607756759090,
+            "guild_id": 874911656721907763,
+            "queue_channel_id": 1448387796707442791,
+            "commands_channel_id": 0,
+            "auto_join": false,
+            "stray_mode": true,
+            "queue_open_keywords": [],
+            "queue_closed_keywords": [],
+            "queue_channel_id_eu": 1448387796707442791,
+            "queue_channel_id_na": 1448387817284833300
+        },
+        {
+            "name": "Wheel Survival",
+            "group": "hungergames",
+            "queue_bot_id": 0,
+            "guild_id": 1347308374412365997,
+            "queue_channel_id": 1364706882312212490,
+            "commands_channel_id": 0,
+            "auto_join": false,
+            "stray_mode": true,
+            "any_bot": true,
+            "queue_open_keywords": [],
+            "queue_closed_keywords": []
+        }
+    ]
+}
