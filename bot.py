@@ -434,6 +434,10 @@ class QueueBot(discord.Client):
                         if accept_callback:
                             accept_callback(server_name, server_cfg)
 
+                        # Check position immediately after joining
+                        await asyncio.sleep(2)
+                        await self.check_position(message, server_cfg)
+
                         # (self-ping in commands channel removed)
 
                     except discord.errors.HTTPException as e:
@@ -462,13 +466,17 @@ class QueueBot(discord.Client):
         if not self.joined.get(guild_id):
             return
 
-        full_text = self._full_text(message)
-        username  = self.user.name.lower()
-        user_id   = str(self.user.id)
-        position  = None
+        full_text   = self._full_text(message)
+        username    = self.user.name.lower()
+        user_id     = str(self.user.id)
+        mention     = f"<@{user_id}>"
+        mention_alt = f"<@!{user_id}>"
+        position    = None
 
         for line in full_text.split("\n"):
-            if username in line.lower() or user_id in line:
+            line_l = line.lower()
+            if (username in line_l or user_id in line
+                    or mention in line or mention_alt in line):
                 match = re.match(r"^\s*(\d+)[.)]\s*", line)
                 if match:
                     position = int(match.group(1))
@@ -483,12 +491,14 @@ class QueueBot(discord.Client):
                     break
 
         if position is None:
+            m = f"[{server_name}] Could not detect position in message"
+            logger.info(m); _gui_log(m)
             return
 
         m = f"[{server_name}] POSITION UPDATE — Position #{position}"
         logger.info(m); _gui_log("📍 " + m)
 
-        # 1–4 → warning popup (ask if they want to leave)
+        # 1–4 → warning popup
         if 1 <= position <= 4:
             if not self.warned.get(guild_id):
                 self.warned[guild_id] = True
