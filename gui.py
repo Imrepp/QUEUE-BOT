@@ -12,7 +12,7 @@ import asyncio
 import os
 import sys
 import bot as bot_module
-from bot import QueueBot
+from bot import QueueBot, play_sound
 from logger import setup_logger
 
 logger = setup_logger()
@@ -339,6 +339,7 @@ class App(tk.Tk):
         bot_module.last_seen_callback    = self._update_last_seen
         bot_module.status_dot_callback  = self._set_status_dot
         bot_module.joined_callback       = self._on_queue_joined
+        bot_module.accept_callback       = self._show_accept_timer
 
         # Load saved custom sound
         prefs = load_prefs()
@@ -982,6 +983,104 @@ class App(tk.Tk):
         tk.Button(win, text="Close", font=FONT_B, fg=TEXT, bg=BORDER,
                   relief="flat", padx=16, pady=6, cursor="hand2",
                   command=win.destroy).pack(pady=12)
+
+    # ── Accept timer popup ─────────────────────────────────────────────
+
+    def _show_accept_timer(self, server_name: str, server_cfg: dict):
+        """Show a 2 minute countdown — user must click Accept or gets /leave'd."""
+        def open_popup():
+            win = tk.Toplevel(self)
+            win.title("Queue Ready!")
+            win.configure(bg=BG)
+            win.resizable(False, False)
+            win.attributes("-topmost", True)
+            self._set_win_icon(win)
+            pw, ph = 380, 240
+            px = self.winfo_x() + self.winfo_width()  // 2 - pw // 2
+            py = self.winfo_y() + self.winfo_height() // 2 - ph // 2
+            win.geometry(f"{pw}x{ph}+{px}+{py}")
+
+            tk.Frame(win, bg=GREEN, height=3).pack(fill="x")
+            tk.Label(win, text="✅  QUEUE READY!",
+                     font=("Segoe UI", 13, "bold"), fg=GREEN, bg=BG).pack(pady=(16, 4))
+            tk.Label(win, text=f"You are in the {server_name} queue!",
+                     font=FONT_N, fg=TEXT, bg=BG).pack()
+            tk.Label(win, text="Click ACCEPT or you will be removed in:",
+                     font=FONT_S, fg=MUTED, bg=BG).pack(pady=(4, 0))
+
+            countdown_var = tk.StringVar(value="2:00")
+            tk.Label(win, textvariable=countdown_var,
+                     font=("Segoe UI", 28, "bold"), fg=YELLOW, bg=BG).pack(pady=(4, 12))
+
+            accepted = [False]
+            remaining = [120]  # 2 minutes in seconds
+
+            def tick():
+                if accepted[0]:
+                    return
+                remaining[0] -= 1
+                mins = remaining[0] // 60
+                secs = remaining[0] % 60
+                countdown_var.set(f"{mins}:{secs:02d}")
+
+                # Turn red in last 30 seconds
+                if remaining[0] <= 30:
+                    for w in win.winfo_children():
+                        if isinstance(w, tk.Label) and w.cget("textvariable") == str(countdown_var):
+                            w.config(fg=RED)
+
+                if remaining[0] <= 0:
+                    # Time's up — send /leave
+                    self._append_log(f"⏰ Accept timer expired for {server_name} — sending /leave")
+                    if self._active_bot:
+                        import asyncio
+                        asyncio.run_coroutine_threadsafe(
+                            self._active_bot.send_leave_command(server_cfg),
+                            self._active_bot.loop
+                        )
+                    try: win.destroy()
+                    except: pass
+                    return
+
+                win.after(1000, tick)
+
+            def accept():
+                accepted[0] = True
+                self._append_log(f"✅ Accepted queue for {server_name}!")
+                play_sound()
+                try: win.destroy()
+                except: pass
+
+            def leave():
+                accepted[0] = True
+                self._append_log(f"🔴 Declined queue for {server_name} — sending /leave")
+                if self._active_bot:
+                    import asyncio
+                    asyncio.run_coroutine_threadsafe(
+                        self._active_bot.send_leave_command(server_cfg),
+                        self._active_bot.loop
+                    )
+                try: win.destroy()
+                except: pass
+
+            btn_row = tk.Frame(win, bg=BG)
+            btn_row.pack()
+            tk.Button(btn_row, text="✓  ACCEPT",
+                      font=FONT_B, fg="#000", bg=GREEN,
+                      activebackground=GREEN_DK, relief="flat",
+                      padx=20, pady=8, cursor="hand2",
+                      command=accept).pack(side="left", padx=8)
+            tk.Button(btn_row, text="✕  LEAVE",
+                      font=FONT_B, fg=TEXT, bg=RED,
+                      activebackground="#cc3344", relief="flat",
+                      padx=20, pady=8, cursor="hand2",
+                      command=leave).pack(side="left", padx=8)
+
+            # Play sound and start countdown
+            play_sound()
+            win.after(1000, tick)
+
+        self.after(0, open_popup)
 
     # ── Auto-uncheck on join ───────────────────────────────────────────
 

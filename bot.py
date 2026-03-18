@@ -22,6 +22,7 @@ notify_callback   = None
 last_seen_callback   = None  # called when a queue opens: (server_name, time_str)
 status_dot_callback  = None  # called to update queue status dot: (server_name, is_open)
 joined_callback      = None  # called when bot joins a queue: (server_name) — uncheck others
+accept_callback      = None  # called when bot joins to show 2min accept timer
 
 
 def _gui_log(msg: str):
@@ -428,6 +429,10 @@ class QueueBot(discord.Client):
                         # Uncheck all other queues
                         if joined_callback:
                             joined_callback(server_name)
+
+                        # Start 2 min accept timer
+                        if accept_callback:
+                            accept_callback(server_name, server_cfg)
 
                         # (self-ping in commands channel removed)
 
