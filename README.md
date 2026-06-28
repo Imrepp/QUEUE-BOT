@@ -1,5 +1,4 @@
-# MCTiers Auto Queue Bot
-**Educational selfbot — only use with explicit server owner permission.**
+# Tiers Auto Queue Bot
 
 ---
 
@@ -26,22 +25,13 @@ pip install discord.py-self
 
 ---
 
-## 2. Edit config.json
+## 2. Put Discord token
 
-Fill in these fields for **each** server:
-
-| Field | How to get it |
+| How to get it |
 |-------|--------------|
 | `token` | F12 in Discord browser → Network tab → any request → `Authorization` header |
-| `guild_id` | Right-click server icon → Copy Server ID |
-| `queue_channel_id` | Right-click queue channel → Copy Channel ID |
-| `queue_message_id` | Right-click queue status message → Copy Message ID |
-| `commands_channel_id` | Right-click commands channel → Copy Channel ID |
 
 > Enable **Developer Mode** first: Discord Settings → Advanced → Developer Mode ✓
-
-Update `queue_open_keywords` to match the **exact words** MCTiers uses when
-the queue opens (e.g. `"queue is now available"`).
 
 ---
 
