@@ -18,7 +18,8 @@ mctiers_bot/
 ## 1. Install Python & dependency
 
 1. Download Python 3.10+ from https://python.org
-2. Open a terminal and run:
+2. Find path to your folder
+3. Open a terminal and run:
 ```
 pip install discord.py-self
 ```
@@ -28,7 +29,9 @@ pip install discord.py-self
 ## 2. Put Discord token
 
 | How to get it |
+
 |-------|--------------|
+
 | `token` | F12 in Discord browser → Network tab → any request → `Authorization` header |
 
 > Enable **Developer Mode** first: Discord Settings → Advanced → Developer Mode ✓
